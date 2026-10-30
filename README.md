@@ -17,7 +17,7 @@ Open the local URL printed by Vite. Run `npm run build` for a production build a
 
 Edit the structured profile, project details, skills, experience, process, education, and certifications in `src/data/portfolio.js`. The project artwork is CSS-generated conceptual imagery and can be replaced with real screenshots when available. No project URLs, results, metrics, or project-specific technologies are asserted without resume support.
 
-The Resume button currently generates a PDF from the portfolio's structured content in the browser. Update contact and social URLs in the profile data when needed.
+The Resume button downloads the source resume PDF from the attached resume. Contact and social destinations are defined in the profile data.
 
 ## Notes
 
