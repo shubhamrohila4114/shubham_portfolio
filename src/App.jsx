@@ -5,6 +5,38 @@ import { certifications, education, experience, processSteps, profile, projects,
 
 const reveal = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: .7, ease: [.16, 1, .3, 1] } } };
 const stagger = { hidden: {}, show: { transition: { staggerChildren: .09 } } };
+const themeChoices = [
+  { id: 'gold', name: 'Original Gold', swatch: '#d7b967' },
+  { id: 'crimson', name: 'Crimson', swatch: '#b84b45' },
+  { id: 'violet', name: 'Violet', swatch: '#a99abb' },
+  { id: 'forest', name: 'Forest', swatch: '#879b72' },
+  { id: 'silver', name: 'Silver', swatch: '#bec2c1' },
+];
+
+function ThemeSwitcher() {
+  const [activeTheme, setActiveTheme] = useState(() => {
+    try { return localStorage.getItem('shubham-portfolio-theme') || 'gold'; }
+    catch { return 'gold'; }
+  });
+  useEffect(() => {
+    const validTheme = themeChoices.some((theme) => theme.id === activeTheme) ? activeTheme : 'gold';
+    document.documentElement.dataset.theme = validTheme;
+    try { localStorage.setItem('shubham-portfolio-theme', validTheme); } catch { /* Storage may be unavailable. */ }
+  }, [activeTheme]);
+  return <div className="theme-switcher" role="group" aria-label="Choose website color theme">
+    <span className="theme-switcher__label">Theme</span>
+    {themeChoices.map((theme) => <button
+      className={`theme-swatch${activeTheme === theme.id ? ' is-active' : ''}`}
+      key={theme.id}
+      type="button"
+      style={{ '--swatch-color': theme.swatch }}
+      aria-label={`${theme.name} theme`}
+      aria-pressed={activeTheme === theme.id}
+      title={theme.name}
+      onClick={() => setActiveTheme(theme.id)}
+    ><span className="theme-swatch__tooltip" role="tooltip">{theme.name}</span></button>)}
+  </div>;
+}
 
 function CursorFollow() {
   const reduceMotion = useReducedMotion();
@@ -35,7 +67,7 @@ function Header() {
   const links = [['Work', '#work'], ['About', '#about'], ['Journey', '#journey'], ['Contact', '#contact']];
   return <header className="site-header"><a className="wordmark" href="#top" aria-label="Shubham Rohila, home">SR<span>®</span></a>
     <nav className="desktop-nav" aria-label="Main navigation">{links.map(([label, href]) => <a key={href} href={href}>{label}</a>)}</nav>
-    <a href={`mailto:${profile.email}`} className="header-hello">Let’s talk <ArrowUpRight size={14}/></a>
+    <div className="header-actions"><ThemeSwitcher/><a href={`mailto:${profile.email}`} className="header-hello">Let’s talk <ArrowUpRight size={14}/></a></div>
     <button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={open ? 'Close navigation' : 'Open navigation'}>{open ? <X/> : <Menu/>}</button>
     <AnimatePresence>{open && <motion.nav className="mobile-nav" initial={{opacity:0,y:-10}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-10}} aria-label="Mobile navigation">{links.map(([label, href])=><a key={href} href={href} onClick={()=>setOpen(false)}>{label}<ArrowUpRight size={16}/></a>)}</motion.nav>}</AnimatePresence>
   </header>;
