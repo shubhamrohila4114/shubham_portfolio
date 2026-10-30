@@ -45,8 +45,22 @@ function Eyebrow({ children }) { return <div className="eyebrow"><span className
 function SectionHeading({ index, eyebrow, title, note }) { return <motion.div className="section-heading" variants={reveal}><div><Eyebrow>{index} / {eyebrow}</Eyebrow><h2>{title}</h2></div>{note && <p>{note}</p>}</motion.div>; }
 
 function Hero() {
+  const reduceMotion = useReducedMotion();
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const orbX = useSpring(pointerX, { stiffness: 70, damping: 20, mass: .5 });
+  const orbY = useSpring(pointerY, { stiffness: 70, damping: 20, mass: .5 });
+  useEffect(() => {
+    if (reduceMotion || !window.matchMedia('(pointer: fine)').matches) return;
+    const move = (event) => {
+      pointerX.set(Math.max(-12, Math.min(12, (event.clientX / window.innerWidth - .75) * 24)));
+      pointerY.set(Math.max(-12, Math.min(12, (event.clientY / window.innerHeight - .5) * 24)));
+    };
+    window.addEventListener('pointermove', move, { passive: true });
+    return () => window.removeEventListener('pointermove', move);
+  }, [pointerX, pointerY, reduceMotion]);
   return <section className="hero" id="top">
-    <div className="hero-grain" aria-hidden="true"/><div className="hero-orbit" aria-hidden="true"><span/><span/><span/><div className="orbit-core"><Code2 size={30}/></div><i className="orbit-node node-one"/><i className="orbit-node node-two"/><i className="orbit-node node-three"/></div>
+    <div className="hero-grain" aria-hidden="true"/><div className="hero-orbit" aria-hidden="true"><span/><span/><span/><motion.div className="orbit-core" style={{ x: orbX, y: orbY }}><Code2 size={30}/></motion.div><i className="orbit-node node-one"/><i className="orbit-node node-two"/><i className="orbit-node node-three"/></div>
     <div className="hero-copy"><motion.div initial="hidden" animate="show" variants={stagger}>
       <motion.div variants={reveal}><Eyebrow>Developer · India · Available for opportunities</Eyebrow></motion.div>
       <motion.h1 variants={reveal}>Building<br/><em>for people.</em></motion.h1>
