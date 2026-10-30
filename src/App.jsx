@@ -1,10 +1,26 @@
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
 import { ArrowDown, ArrowRight, ArrowUpRight, Github, Linkedin, Mail, Menu, Phone, X, Download, Code2, Layers3, Sparkles, Check, MoveUpRight } from 'lucide-react';
 import { certifications, education, experience, processSteps, profile, projects, skills } from './data/portfolio.js';
 
 const reveal = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: .7, ease: [.16, 1, .3, 1] } } };
 const stagger = { hidden: {}, show: { transition: { staggerChildren: .09 } } };
+
+function CursorFollow() {
+  const reduceMotion = useReducedMotion();
+  const pointerX = useMotionValue(-100);
+  const pointerY = useMotionValue(-100);
+  const x = useSpring(pointerX, { stiffness: 120, damping: 22, mass: .3 });
+  const y = useSpring(pointerY, { stiffness: 120, damping: 22, mass: .3 });
+  useEffect(() => {
+    if (reduceMotion || !window.matchMedia('(pointer: fine)').matches) return;
+    const move = (event) => { pointerX.set(event.clientX); pointerY.set(event.clientY); };
+    window.addEventListener('pointermove', move, { passive: true });
+    return () => window.removeEventListener('pointermove', move);
+  }, [pointerX, pointerY, reduceMotion]);
+  if (reduceMotion) return null;
+  return <motion.div className="cursor-follow" style={{ x, y }} aria-hidden="true"><span className="cursor-follow__halo"/><span className="cursor-follow__core"/></motion.div>;
+}
 
 function ScrollSection({ children }) {
   return <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: .12 }} variants={stagger}>{children}</motion.div>;
@@ -61,5 +77,5 @@ function Contact() { return <section className="contact-section" id="contact"><d
 
 export default function App() {
   useEffect(()=>{ document.documentElement.classList.add('js-ready'); return ()=>document.documentElement.classList.remove('js-ready'); },[]);
-  return <><a className="skip-link" href="#main">Skip to content</a><Header/><main id="main"><Hero/><ScrollSection><About/></ScrollSection><ScrollSection><Projects/></ScrollSection><ScrollSection><Arsenal/></ScrollSection><ScrollSection><Experience/></ScrollSection><ScrollSection><Process/></ScrollSection><ScrollSection><Education/></ScrollSection><ScrollSection><Contact/></ScrollSection></main></>;
+  return <><a className="skip-link" href="#main">Skip to content</a><CursorFollow/><Header/><main id="main"><Hero/><ScrollSection><About/></ScrollSection><ScrollSection><Projects/></ScrollSection><ScrollSection><Arsenal/></ScrollSection><ScrollSection><Experience/></ScrollSection><ScrollSection><Process/></ScrollSection><ScrollSection><Education/></ScrollSection><ScrollSection><Contact/></ScrollSection></main></>;
 }
