@@ -7,21 +7,22 @@ const reveal = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transi
 const stagger = { hidden: {}, show: { transition: { staggerChildren: .09 } } };
 const themeChoices = [
   { id: 'gold', name: 'Original Gold', swatch: '#d7b967' },
-  { id: 'crimson', name: 'Crimson', swatch: '#b84b45' },
-  { id: 'violet', name: 'Violet', swatch: '#a99abb' },
-  { id: 'forest', name: 'Forest', swatch: '#879b72' },
-  { id: 'silver', name: 'Silver', swatch: '#bec2c1' },
+  { id: 'red', name: 'Red', swatch: '#FF0000' },
+  { id: 'green', name: 'Green', swatch: '#2ecc71' },
+  { id: 'orange', name: 'Orange', swatch: '#ff7a00' },
+  { id: 'gradient', name: 'Gradient Tone', swatch: 'linear-gradient(135deg, #FF0000 0%, #ff7a00 52%, #ffcf4a 100%)' },
 ];
 
 function ThemeSwitcher() {
   const [activeTheme, setActiveTheme] = useState(() => {
-    try { return localStorage.getItem('shubham-portfolio-theme') || 'gold'; }
-    catch { return 'gold'; }
+    try {
+      const saved = localStorage.getItem('shubham-portfolio-theme');
+      return themeChoices.some((theme) => theme.id === saved) ? saved : 'gold';
+    } catch { return 'gold'; }
   });
   useEffect(() => {
-    const validTheme = themeChoices.some((theme) => theme.id === activeTheme) ? activeTheme : 'gold';
-    document.documentElement.dataset.theme = validTheme;
-    try { localStorage.setItem('shubham-portfolio-theme', validTheme); } catch { /* Storage may be unavailable. */ }
+    document.documentElement.dataset.theme = activeTheme;
+    try { localStorage.setItem('shubham-portfolio-theme', activeTheme); } catch { /* Storage may be unavailable. */ }
   }, [activeTheme]);
   return <div className="theme-switcher" role="group" aria-label="Choose website color theme">
     <span className="theme-switcher__label">Theme</span>
@@ -104,7 +105,7 @@ function Hero() {
   </section>;
 }
 
-function About() { return <section className="section about-section" id="about"><div className="section-wrap"><SectionHeading index="01" eyebrow="A little about me" title={<>Code with care.<br/><span>Built for humans.</span></>} note="Curiosity in the details. Clarity in the experience."/><div className="about-grid"><motion.div className="about-mark" variants={reveal} aria-hidden="true"><span>SR</span><i>FULL STACK<br/>DEVELOPER</i><div className="mark-ring"/></motion.div><motion.div className="about-copy" variants={reveal}><p className="lead-copy">{profile.introduction}</p><p>{profile.objective}</p><div className="about-signoff"><span>Curious by nature</span><span className="signoff-line"/><span>Focused on the details</span></div></motion.div></div></div></section>; }
+function About() { return <section className="section about-section" id="about"><div className="section-wrap"><SectionHeading index="01" eyebrow="A little about me" title={<>Code with care.<br/><span>Built for humans.</span></>} note="Curiosity in the details. Clarity in the experience."/><div className="about-grid"><motion.div className="about-mark" variants={reveal} aria-hidden="true"><span>SR</span><i>FULL STACK<br/>DEVELOPER</i><div className="mark-ring"/></motion.div><motion.div className="about-copy" variants={reveal}><p className="lead-copy">{profile.introduction}</p><p>{profile.objective}</p><div className="about-signoff"><span>Curious by nature</span><span className="signoff-line"/><span>Focused on the details</span></div></div></div></div></section>; }
 
 function ProjectVisual({ project, index }) {
   return <div className={`project-art art-${project.tone}`} aria-label={`${project.name} conceptual visual placeholder`} role="img"><div className="art-noise"/><div className={`art-shape shape-${index}`}><div className="shape-orbit"/><div className="shape-window"><span/><span/><span/><b>{project.visualLabel}</b><div className="shape-lines"><i/><i/><i/></div></div></div><div className="art-bottom"><span>CONCEPTUAL VISUAL</span><span>0{index+1}</span></div><div className="art-stamp">{index===0?<Sparkles size={18}/>:index===1?<Layers3 size={18}/>:<Code2 size={18}/>}</div></div>;
