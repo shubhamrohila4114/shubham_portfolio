@@ -1,58 +1,37 @@
-/* Requested vibrant accent palettes; each keeps dark surfaces and high-contrast text. */
-:root[data-theme="gold"]{
-  --theme-page:#11110f;--theme-header:rgba(17,17,15,.94);--theme-surface:#1a1916;--theme-surface-raised:#24221e;
-  --theme-light:#e7e1d1;--theme-contact:#d1c391;--theme-text:#f5f2e9;--theme-muted:#c3bdaf;--theme-soft:#d3cdbf;
-  --theme-border:rgba(245,242,233,.2);--theme-border-light:rgba(27,26,22,.3);
-  --theme-accent:#d7b967;--theme-accent-strong:#c84a32;--theme-accent-secondary:#ffb34d;
-  --theme-ink:#171610;--theme-card-light:#ded6c4;--theme-art-one:#493126;--theme-art-two:#4a4836;--theme-art-three:#35382f;
+/* Final theme polish: make the gradient palette render as gradients and keep transitions smooth. */
+:root[data-theme="gradient"] .project-art.art-ember{background:var(--theme-art-one)}
+:root[data-theme="gradient"] .project-art.art-olive{background:var(--theme-art-two)}
+:root[data-theme="gradient"] .project-art.art-blue{background:var(--theme-art-three)}
+:root[data-theme="gradient"] .button-light{background:linear-gradient(110deg,#FF0000 0%,#ff7a00 55%,#ffcf4a 100%);color:#17110c}
+:root[data-theme="gradient"] .hero h1 em,
+:root[data-theme="gradient"] .section-heading h2 span,
+:root[data-theme="gradient"] .contact-section h2 em,
+:root[data-theme="gradient"] .skill-head>span,
+:root[data-theme="gradient"] .process-number,
+:root[data-theme="gradient"] .cert-number,
+:root[data-theme="gradient"] .project-info h3 sup{
+  background:linear-gradient(100deg,#FF0000 0%,#ff7a00 56%,#ffcf4a 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-:root[data-theme="red"]{
-  --theme-page:#120b0b;--theme-header:rgba(18,11,11,.96);--theme-surface:#211111;--theme-surface-raised:#2b1515;
-  --theme-light:#f1dfdc;--theme-contact:#e0bfba;--theme-text:#fff8f7;--theme-muted:#d9c3c1;--theme-soft:#ead6d4;
-  --theme-border:rgba(255,242,240,.2);--theme-border-light:rgba(34,14,14,.28);
-  --theme-accent:#FF0000;--theme-accent-strong:#FF0000;--theme-accent-secondary:#ff6b58;
-  --theme-ink:#1d1010;--theme-card-light:#e7cbc7;--theme-art-one:#592220;--theme-art-two:#4c2622;--theme-art-three:#38201d;
-}
-:root[data-theme="green"]{
-  --theme-page:#07140d;--theme-header:rgba(7,20,13,.96);--theme-surface:#102219;--theme-surface-raised:#173023;
-  --theme-light:#dcebe1;--theme-contact:#c0ddca;--theme-text:#f4fff7;--theme-muted:#bfd5c6;--theme-soft:#d7e9dc;
-  --theme-border:rgba(239,255,245,.2);--theme-border-light:rgba(12,35,21,.3);
-  --theme-accent:#2ecc71;--theme-accent-strong:#2ecc71;--theme-accent-secondary:#74efa7;
-  --theme-ink:#0d1b12;--theme-card-light:#cee2d3;--theme-art-one:#173d27;--theme-art-two:#244631;--theme-art-three:#1d382b;
-}
-:root[data-theme="orange"]{
-  --theme-page:#17100a;--theme-header:rgba(23,16,10,.96);--theme-surface:#26180d;--theme-surface-raised:#34200f;
-  --theme-light:#f2e3d1;--theme-contact:#e6c9a8;--theme-text:#fff9f1;--theme-muted:#d9c6b1;--theme-soft:#eedbc6;
-  --theme-border:rgba(255,247,237,.2);--theme-border-light:rgba(45,28,13,.28);
-  --theme-accent:#ff7a00;--theme-accent-strong:#ff7a00;--theme-accent-secondary:#ffab43;
-  --theme-ink:#211408;--theme-card-light:#ead6bd;--theme-art-one:#553015;--theme-art-two:#493316;--theme-art-three:#3a2914;
-}
-:root[data-theme="gradient"]{
-  --theme-page:#120d0a;--theme-header:rgba(18,13,10,.96);--theme-surface:#211610;--theme-surface-raised:#2d1c11;
-  --theme-light:#f1e4d5;--theme-contact:#dec8a6;--theme-text:#fff9f2;--theme-muted:#d8c7b6;--theme-soft:#ecddcc;
-  --theme-border:rgba(255,249,242,.2);--theme-border-light:rgba(44,27,15,.28);
-  --theme-accent:#ff8a16;--theme-accent-strong:#ed3827;--theme-accent-secondary:#ffca4a;
-  --theme-ink:#1e140b;--theme-card-light:#e5d3bd;
-  --theme-art-one:linear-gradient(135deg,#401512 0%,#a82b17 40%,#e45b16 72%,#ffb62f 100%);
-  --theme-art-two:linear-gradient(135deg,#30200f 0%,#855016 55%,#e1921a 100%);
-  --theme-art-three:linear-gradient(135deg,#2c160c 0%,#9a3b12 48%,#dc7913 100%);
-}
+:root[data-theme="gradient"] .hero-orbit{border-color:rgba(255,122,0,.48)}
+:root[data-theme="gradient"] .hero-orbit>span{border-color:rgba(255,122,0,.36)}
+:root[data-theme="gradient"] .orbit-node{background:#FF0000}
+:root[data-theme="gradient"] .node-two,:root[data-theme="gradient"] .node-three{background:#ffcf4a}
+:root[data-theme="gradient"] .eyebrow-dot,:root[data-theme="gradient"] .project-info li svg,:root[data-theme="gradient"] .mobile-nav a svg{color:#ff7a00;background-color:#ff7a00}
+:root[data-theme="gradient"] .theme-swatch.is-active{box-shadow:0 0 0 2px #ff7a00}
 
-/* Maintain readable typography on both the dark field and pale content panels. */
-:root[data-theme="gold"],:root[data-theme="red"],:root[data-theme="green"],:root[data-theme="orange"],:root[data-theme="gradient"]{color-scheme:dark}
-:root[data-theme="gold"] .about-section .eyebrow,:root[data-theme="gold"] .journey-section .eyebrow,
-:root[data-theme="red"] .about-section .eyebrow,:root[data-theme="red"] .journey-section .eyebrow,
-:root[data-theme="green"] .about-section .eyebrow,:root[data-theme="green"] .journey-section .eyebrow,
-:root[data-theme="orange"] .about-section .eyebrow,:root[data-theme="orange"] .journey-section .eyebrow,
-:root[data-theme="gradient"] .about-section .eyebrow,:root[data-theme="gradient"] .journey-section .eyebrow{color:#494239}
-:root[data-theme="gold"] .about-copy p:not(.lead-copy),:root[data-theme="gold"] .about-signoff,:root[data-theme="gold"] .timeline-marker,:root[data-theme="gold"] .timeline-top p,:root[data-theme="gold"] .timeline-top time,:root[data-theme="gold"] .timeline-content ul,:root[data-theme="gold"] .education-card p,:root[data-theme="gold"] .education-card time,
-:root[data-theme="red"] .about-copy p:not(.lead-copy),:root[data-theme="red"] .about-signoff,:root[data-theme="red"] .timeline-marker,:root[data-theme="red"] .timeline-top p,:root[data-theme="red"] .timeline-top time,:root[data-theme="red"] .timeline-content ul,:root[data-theme="red"] .education-card p,:root[data-theme="red"] .education-card time,
-:root[data-theme="green"] .about-copy p:not(.lead-copy),:root[data-theme="green"] .about-signoff,:root[data-theme="green"] .timeline-marker,:root[data-theme="green"] .timeline-top p,:root[data-theme="green"] .timeline-top time,:root[data-theme="green"] .timeline-content ul,:root[data-theme="green"] .education-card p,:root[data-theme="green"] .education-card time,
-:root[data-theme="orange"] .about-copy p:not(.lead-copy),:root[data-theme="orange"] .about-signoff,:root[data-theme="orange"] .timeline-marker,:root[data-theme="orange"] .timeline-top p,:root[data-theme="orange"] .timeline-top time,:root[data-theme="orange"] .timeline-content ul,:root[data-theme="orange"] .education-card p,:root[data-theme="orange"] .education-card time,
-:root[data-theme="gradient"] .about-copy p:not(.lead-copy),:root[data-theme="gradient"] .about-signoff,:root[data-theme="gradient"] .timeline-marker,:root[data-theme="gradient"] .timeline-top p,:root[data-theme="gradient"] .timeline-top time,:root[data-theme="gradient"] .timeline-content ul,:root[data-theme="gradient"] .education-card p,:root[data-theme="gradient"] .education-card time{color:#514b42}
-:root[data-theme="gold"] .contact-section .eyebrow,:root[data-theme="gold"] .contact-intro,:root[data-theme="gold"] .contact-details a,:root[data-theme="gold"] .resume-link,:root[data-theme="gold"] .site-footer,
-:root[data-theme="red"] .contact-section .eyebrow,:root[data-theme="red"] .contact-intro,:root[data-theme="red"] .contact-details a,:root[data-theme="red"] .resume-link,:root[data-theme="red"] .site-footer,
-:root[data-theme="green"] .contact-section .eyebrow,:root[data-theme="green"] .contact-intro,:root[data-theme="green"] .contact-details a,:root[data-theme="green"] .resume-link,:root[data-theme="green"] .site-footer,
-:root[data-theme="orange"] .contact-section .eyebrow,:root[data-theme="orange"] .contact-intro,:root[data-theme="orange"] .contact-details a,:root[data-theme="orange"] .resume-link,:root[data-theme="orange"] .site-footer,
-:root[data-theme="gradient"] .contact-section .eyebrow,:root[data-theme="gradient"] .contact-intro,:root[data-theme="gradient"] .contact-details a,:root[data-theme="gradient"] .resume-link,:root[data-theme="gradient"] .site-footer{color:#40372b}
-.theme-swatch[aria-label="Gradient Tone theme"]{background:linear-gradient(135deg,#FF0000 0%,#ff7a00 52%,#ffcf4a 100%)}
+/* A short, consistent transition for all surfaces and controls that consume theme tokens. */
+html,body,.site-header,.desktop-nav a,.header-hello,.hero,.hero h1 em,.button,.section,.section-heading h2 span,
+.about-mark,.project-art,.project-info,.project-info h3 sup,.skill-group,.skill-tags span,.timeline-entry,
+.process-step,.cert-card,.contact-section,.contact-details a,.resume-link,.site-footer,.orbit-core,.orbit-node{
+  transition-property:background-color,background-image,color,border-color,box-shadow;
+  transition-duration:300ms;
+  transition-timing-function:ease;
+}
+@media(prefers-reduced-motion:reduce){
+  html,body,.site-header,.desktop-nav a,.header-hello,.hero,.hero h1 em,.button,.section,.section-heading h2 span,
+  .about-mark,.project-art,.project-info,.project-info h3 sup,.skill-group,.skill-tags span,.timeline-entry,
+  .process-step,.cert-card,.contact-section,.contact-details a,.resume-link,.site-footer,.orbit-core,.orbit-node{
+    transition-duration:.01ms!important;
+  }
+}
