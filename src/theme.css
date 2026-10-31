@@ -1,37 +1,27 @@
-/* Final theme polish: make the gradient palette render as gradients and keep transitions smooth. */
-:root[data-theme="gradient"] .project-art.art-ember{background:var(--theme-art-one)}
-:root[data-theme="gradient"] .project-art.art-olive{background:var(--theme-art-two)}
-:root[data-theme="gradient"] .project-art.art-blue{background:var(--theme-art-three)}
-:root[data-theme="gradient"] .button-light{background:linear-gradient(110deg,#FF0000 0%,#ff7a00 55%,#ffcf4a 100%);color:#17110c}
-:root[data-theme="gradient"] .hero h1 em,
-:root[data-theme="gradient"] .section-heading h2 span,
-:root[data-theme="gradient"] .contact-section h2 em,
-:root[data-theme="gradient"] .skill-head>span,
-:root[data-theme="gradient"] .process-number,
-:root[data-theme="gradient"] .cert-number,
-:root[data-theme="gradient"] .project-info h3 sup{
-  background:linear-gradient(100deg,#FF0000 0%,#ff7a00 56%,#ffcf4a 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-:root[data-theme="gradient"] .hero-orbit{border-color:rgba(255,122,0,.48)}
-:root[data-theme="gradient"] .hero-orbit>span{border-color:rgba(255,122,0,.36)}
-:root[data-theme="gradient"] .orbit-node{background:#FF0000}
-:root[data-theme="gradient"] .node-two,:root[data-theme="gradient"] .node-three{background:#ffcf4a}
-:root[data-theme="gradient"] .eyebrow-dot,:root[data-theme="gradient"] .project-info li svg,:root[data-theme="gradient"] .mobile-nav a svg{color:#ff7a00;background-color:#ff7a00}
-:root[data-theme="gradient"] .theme-swatch.is-active{box-shadow:0 0 0 2px #ff7a00}
+/* Theme system — palette tokens are applied at the document root before paint. */
+:root,:root[data-theme="gold"]{color-scheme:dark;--page:#11110f;--header:rgba(17,17,15,.94);--surface:#1a1916;--surface-raised:#24221e;--light:#e7e1d1;--contact:#d1c391;--text:#f5f2e9;--muted:#c3bdaf;--soft:#d3cdbf;--ink:#171610;--light-text:#29261f;--light-muted:#514b42;--border:rgba(245,242,233,.2);--light-border:rgba(27,26,22,.24);--accent:#d7b967;--accent-2:#c84a32;--accent-3:#d78948;--card:#ded6c4;--art-1:#493126;--art-2:#4a4836;--art-3:#35382f;--accent-gradient:linear-gradient(110deg,#d7b967,#d78948)}
+:root[data-theme="red"]{color-scheme:dark;--page:#120b0b;--header:rgba(18,11,11,.96);--surface:#211111;--surface-raised:#2b1515;--light:#f1dfdc;--contact:#e0bfba;--text:#fff8f7;--muted:#e0cdca;--soft:#f0ddda;--ink:#1d1010;--light-text:#281716;--light-muted:#51403e;--border:rgba(255,242,240,.21);--light-border:rgba(34,14,14,.24);--accent:#FF0000;--accent-2:#FF0000;--accent-3:#ff6b58;--card:#e7cbc7;--art-1:#592220;--art-2:#4c2622;--art-3:#38201d;--accent-gradient:linear-gradient(110deg,#FF0000,#ff6b58)}
+:root[data-theme="green"]{color-scheme:dark;--page:#07140d;--header:rgba(7,20,13,.96);--surface:#102219;--surface-raised:#173023;--light:#dcebe1;--contact:#c0ddca;--text:#f4fff7;--muted:#c8ddcf;--soft:#e0f0e5;--ink:#0d1b12;--light-text:#17251b;--light-muted:#3d5143;--border:rgba(239,255,245,.21);--light-border:rgba(12,35,21,.24);--accent:#2ecc71;--accent-2:#2ecc71;--accent-3:#74efa7;--card:#cee2d3;--art-1:#173d27;--art-2:#244631;--art-3:#1d382b;--accent-gradient:linear-gradient(110deg,#2ecc71,#86f5ae)}
+:root[data-theme="orange"]{color-scheme:dark;--page:#17100a;--header:rgba(23,16,10,.96);--surface:#26180d;--surface-raised:#34200f;--light:#f2e3d1;--contact:#e6c9a8;--text:#fff9f1;--muted:#e2d0bd;--soft:#f4e2cf;--ink:#211408;--light-text:#2c1d11;--light-muted:#584634;--border:rgba(255,247,237,.21);--light-border:rgba(45,28,13,.24);--accent:#ff7a00;--accent-2:#ff7a00;--accent-3:#ffb34d;--card:#ead6bd;--art-1:#553015;--art-2:#493316;--art-3:#3a2914;--accent-gradient:linear-gradient(110deg,#ff7a00,#ffb34d)}
+:root[data-theme="gradient"]{color-scheme:dark;--page:#120d0a;--header:rgba(18,13,10,.96);--surface:#211610;--surface-raised:#2d1c11;--light:#f1e4d5;--contact:#dec8a6;--text:#fff9f2;--muted:#e0cebd;--soft:#f2e2d2;--ink:#1e140b;--light-text:#2b1e13;--light-muted:#594638;--border:rgba(255,249,242,.22);--light-border:rgba(44,27,15,.24);--accent:#ff7a00;--accent-2:#FF0000;--accent-3:#ffcf4a;--card:#e5d3bd;--art-1:linear-gradient(135deg,#401512 0%,#a82b17 38%,#e45b16 72%,#ffb62f 100%);--art-2:linear-gradient(135deg,#30200f 0%,#855016 55%,#e1921a 100%);--art-3:linear-gradient(135deg,#2c160c 0%,#9a3b12 48%,#dc7913 100%);--accent-gradient:linear-gradient(105deg,#FF0000 0%,#ff7a00 53%,#ffcf4a 100%)}
 
-/* A short, consistent transition for all surfaces and controls that consume theme tokens. */
-html,body,.site-header,.desktop-nav a,.header-hello,.hero,.hero h1 em,.button,.section,.section-heading h2 span,
-.about-mark,.project-art,.project-info,.project-info h3 sup,.skill-group,.skill-tags span,.timeline-entry,
-.process-step,.cert-card,.contact-section,.contact-details a,.resume-link,.site-footer,.orbit-core,.orbit-node{
-  transition-property:background-color,background-image,color,border-color,box-shadow;
-  transition-duration:300ms;
-  transition-timing-function:ease;
-}
-@media(prefers-reduced-motion:reduce){
-  html,body,.site-header,.desktop-nav a,.header-hello,.hero,.hero h1 em,.button,.section,.section-heading h2 span,
-  .about-mark,.project-art,.project-info,.project-info h3 sup,.skill-group,.skill-tags span,.timeline-entry,
-  .process-step,.cert-card,.contact-section,.contact-details a,.resume-link,.site-footer,.orbit-core,.orbit-node{
-    transition-duration:.01ms!important;
-  }
-}
+/* Navbar controls */
+.header-actions{display:flex;align-items:center;gap:clamp(12px,2vw,28px);margin-left:auto}.header-actions .header-hello{white-space:nowrap}.theme-switcher{display:flex;align-items:center;gap:9px}.theme-switcher__label{font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.theme-swatch{position:relative;width:18px;height:18px;flex:0 0 18px;padding:0;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:var(--swatch-color);cursor:pointer;transition:transform .2s ease,border-color .3s ease,box-shadow .3s ease}.theme-swatch:hover{transform:scale(1.13)}.theme-swatch.is-active{border:2px solid #fff;box-shadow:0 0 0 2px var(--accent-2)}.theme-swatch:focus-visible{outline:2px solid var(--accent-3);outline-offset:4px}.theme-swatch__tooltip{position:absolute;z-index:80;left:50%;top:calc(100% + 12px);transform:translate(-50%,-3px);padding:6px 8px;border:1px solid var(--border);background:var(--surface-raised);color:var(--text);font:9px var(--mono);white-space:nowrap;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility .18s}.theme-swatch:hover .theme-swatch__tooltip,.theme-swatch:focus-visible .theme-swatch__tooltip{opacity:1;visibility:visible;transform:translate(-50%,0)}
+
+/* Full-site token mapping: color adjustments only; existing layout and motion stay intact. */
+html,body{background-color:var(--page);color:var(--text);transition:background-color .3s ease,color .3s ease}body{background-color:var(--page)}
+.site-header{background-color:var(--header);border-color:var(--border);transition:background-color .3s ease,border-color .3s ease}.desktop-nav,.hero-side-note,.hero-index{color:var(--muted)}.desktop-nav a:hover,.header-hello:hover{color:var(--accent)}.wordmark span,.header-hello svg,.hero-side-note span,.scroll-cue svg,.project-info li svg,.process-number span,.mobile-nav a svg,.contact-details a>svg:first-child,.edu-icon{color:var(--accent-2)}
+.eyebrow{color:var(--soft)}.eyebrow-dot{background-color:var(--accent-2)}.hero{background-color:var(--page);transition:background-color .3s ease}.hero h1 em,.skill-head>span,.process-number,.cert-number{color:var(--accent)}.hero-intro{color:var(--muted)}
+.button-light{background:var(--accent);color:var(--ink);transition:background .3s ease,color .3s ease,transform .25s}.button-light:hover{background:var(--accent-3);color:var(--ink)}.button-outline{color:var(--text);border-color:var(--border)}.button-outline:hover{border-color:var(--accent);color:var(--accent)}
+.hero-orbit,.hero-orbit>span{border-color:var(--border)}.orbit-core{color:var(--accent-3);background-color:var(--surface);box-shadow:none}.orbit-node{background-color:var(--accent-2)}.node-two,.node-three{background-color:var(--accent)}
+.about-section,.journey-section{background-color:var(--light);color:var(--ink);transition:background-color .3s ease,color .3s ease}.about-section .eyebrow,.journey-section .eyebrow{color:var(--light-muted)}.about-section .eyebrow-dot,.journey-section .eyebrow-dot{background-color:var(--accent-2)}.about-section .section-heading h2 span,.journey-section .section-heading h2 span{color:var(--accent-2)}.about-section .section-heading>p,.journey-section .section-heading>p{color:var(--light-muted)}.about-mark,.education-card{background-color:var(--card);color:var(--light-text)}.about-copy p:not(.lead-copy),.about-signoff,.timeline-marker,.timeline-top p,.timeline-top time,.timeline-content ul,.education-card p,.education-card time{color:var(--light-muted)}.about-copy .lead-copy,.timeline-top h3{color:var(--light-text)}.about-mark,.mark-ring,.mark-ring:before,.mark-ring:after,.timeline-entry{border-color:var(--light-border)}.timeline-marker i{border-color:var(--accent-2);background-color:var(--light)}.timeline-content li::marker{color:var(--accent-2)}
+.work-section,.process-section{background-color:var(--page);color:var(--text);transition:background-color .3s ease,color .3s ease}.arsenal-section,.education-section{background-color:var(--surface);color:var(--text);transition:background-color .3s ease,color .3s ease}.skill-grid,.skill-group,.process-track,.process-step,.cert-card{border-color:var(--border)}.skill-group:hover,.cert-card:hover{background-color:var(--surface-raised)}.skill-head svg,.cert-card>svg{color:var(--muted)}.skill-tags span{border-color:var(--border);color:var(--soft)}.project-art{background:var(--art-1);transition:background .3s ease}.art-ember{background:var(--art-1)}.art-olive{background:var(--art-2)}.art-blue{background:var(--art-3)}.project-info h3 sup{color:var(--accent)}.project-summary,.project-info li,.project-meta,.contribution-label,.no-link-note{color:var(--muted)}.cert-card:hover{border-color:var(--accent-2)}
+.contact-section{background-color:var(--contact);color:var(--light-text);transition:background-color .3s ease,color .3s ease}.contact-section .eyebrow,.contact-intro,.contact-details a,.resume-link,.site-footer{color:var(--light-muted)}.contact-section .eyebrow-dot{background-color:var(--accent-2)}.contact-section h2 em{color:var(--accent-2)}.contact-cta{background-color:var(--ink);color:var(--light)}.contact-cta:hover{background-color:var(--surface-raised);color:var(--text)}.contact-details,.site-footer{border-color:var(--light-border)}.site-footer .wordmark{color:var(--light-text)}.mobile-nav{background-color:var(--surface);border-color:var(--border)}
+
+/* The requested gradient swatch is also used by key accents, CTAs and project treatments. */
+:root[data-theme="gradient"] .theme-swatch[aria-label="Gradient Tone theme"],:root[data-theme="gradient"] .button-light{background:var(--accent-gradient)}:root[data-theme="gradient"] .hero h1 em,:root[data-theme="gradient"] .section-heading h2 span,:root[data-theme="gradient"] .contact-section h2 em,:root[data-theme="gradient"] .skill-head>span,:root[data-theme="gradient"] .process-number,:root[data-theme="gradient"] .cert-number,:root[data-theme="gradient"] .project-info h3 sup{background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}:root[data-theme="gradient"] .hero-orbit{border-color:rgba(255,122,0,.48)}:root[data-theme="gradient"] .hero-orbit>span{border-color:rgba(255,122,0,.36)}
+
+@media(max-width:900px){.header-actions{gap:14px}.theme-switcher{gap:7px}.theme-switcher__label{display:none}}
+@media(max-width:680px){.header-actions{margin-left:auto;margin-right:12px}.header-actions .header-hello{display:none}.theme-switcher{gap:7px}.theme-swatch{width:16px;height:16px;flex-basis:16px}.site-header{padding-right:14px}.menu-toggle{flex:0 0 auto}}
+@media(max-width:380px){.theme-switcher{gap:5px}.theme-swatch{width:14px;height:14px;flex-basis:14px}.header-actions{margin-right:7px}}
+@media(prefers-reduced-motion:reduce){html,body,.site-header,.hero,.about-section,.journey-section,.work-section,.process-section,.arsenal-section,.education-section,.contact-section,.theme-swatch,.theme-swatch__tooltip{transition-duration:.01ms!important}}
