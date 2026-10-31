@@ -1,177 +1,58 @@
-/* Centralized theme tokens; scoped on <html data-theme="...">. */
-:root,
-:root[data-theme="gold"] {
-  color-scheme: dark;
-  --theme-page: #11110f;
-  --theme-header: rgba(17,17,15,.92);
-  --theme-surface: #1a1916;
-  --theme-surface-raised: #191815;
-  --theme-light: #e7e1d1;
-  --theme-contact: #d1c391;
-  --theme-text: #ece9df;
-  --theme-muted: #aaa69a;
-  --theme-soft: #b9b5a9;
-  --theme-border: rgba(236,233,223,.15);
-  --theme-border-light: rgba(27,26,22,.18);
-  --theme-accent: #d7b967;
-  --theme-accent-strong: #c84a32;
-  --theme-accent-secondary: #d78948;
-  --theme-ink: #171610;
-  --theme-card-light: #ded6c4;
-  --theme-art-one: #493126;
-  --theme-art-two: #4a4836;
-  --theme-art-three: #35382f;
+/* Requested vibrant accent palettes; each keeps dark surfaces and high-contrast text. */
+:root[data-theme="gold"]{
+  --theme-page:#11110f;--theme-header:rgba(17,17,15,.94);--theme-surface:#1a1916;--theme-surface-raised:#24221e;
+  --theme-light:#e7e1d1;--theme-contact:#d1c391;--theme-text:#f5f2e9;--theme-muted:#c3bdaf;--theme-soft:#d3cdbf;
+  --theme-border:rgba(245,242,233,.2);--theme-border-light:rgba(27,26,22,.3);
+  --theme-accent:#d7b967;--theme-accent-strong:#c84a32;--theme-accent-secondary:#ffb34d;
+  --theme-ink:#171610;--theme-card-light:#ded6c4;--theme-art-one:#493126;--theme-art-two:#4a4836;--theme-art-three:#35382f;
 }
-:root[data-theme="crimson"] {
-  color-scheme: dark;
-  --theme-page: #151112;
-  --theme-header: rgba(21,17,18,.94);
-  --theme-surface: #21191a;
-  --theme-surface-raised: #1c1718;
-  --theme-light: #e7d9d6;
-  --theme-contact: #d1b6ae;
-  --theme-text: #f0e8e5;
-  --theme-muted: #b2a19d;
-  --theme-soft: #c1b2ad;
-  --theme-border: rgba(240,224,220,.16);
-  --theme-border-light: rgba(34,22,23,.2);
-  --theme-accent: #c76665;
-  --theme-accent-strong: #a83f49;
-  --theme-accent-secondary: #dd8b68;
-  --theme-ink: #1c1515;
-  --theme-card-light: #d9c5bd;
-  --theme-art-one: #503133;
-  --theme-art-two: #493333;
-  --theme-art-three: #38302e;
+:root[data-theme="red"]{
+  --theme-page:#120b0b;--theme-header:rgba(18,11,11,.96);--theme-surface:#211111;--theme-surface-raised:#2b1515;
+  --theme-light:#f1dfdc;--theme-contact:#e0bfba;--theme-text:#fff8f7;--theme-muted:#d9c3c1;--theme-soft:#ead6d4;
+  --theme-border:rgba(255,242,240,.2);--theme-border-light:rgba(34,14,14,.28);
+  --theme-accent:#FF0000;--theme-accent-strong:#FF0000;--theme-accent-secondary:#ff6b58;
+  --theme-ink:#1d1010;--theme-card-light:#e7cbc7;--theme-art-one:#592220;--theme-art-two:#4c2622;--theme-art-three:#38201d;
 }
-:root[data-theme="violet"] {
-  color-scheme: dark;
-  --theme-page: #151317;
-  --theme-header: rgba(21,19,23,.94);
-  --theme-surface: #211d24;
-  --theme-surface-raised: #1c191f;
-  --theme-light: #e4dce7;
-  --theme-contact: #d0c2d4;
-  --theme-text: #efebf0;
-  --theme-muted: #aaa0af;
-  --theme-soft: #bbb2c0;
-  --theme-border: rgba(238,230,242,.16);
-  --theme-border-light: rgba(34,28,36,.2);
-  --theme-accent: #b8a8c6;
-  --theme-accent-strong: #8f789f;
-  --theme-accent-secondary: #c5afc1;
-  --theme-ink: #1a171c;
-  --theme-card-light: #d9cddd;
-  --theme-art-one: #493d4a;
-  --theme-art-two: #423a48;
-  --theme-art-three: #34343d;
+:root[data-theme="green"]{
+  --theme-page:#07140d;--theme-header:rgba(7,20,13,.96);--theme-surface:#102219;--theme-surface-raised:#173023;
+  --theme-light:#dcebe1;--theme-contact:#c0ddca;--theme-text:#f4fff7;--theme-muted:#bfd5c6;--theme-soft:#d7e9dc;
+  --theme-border:rgba(239,255,245,.2);--theme-border-light:rgba(12,35,21,.3);
+  --theme-accent:#2ecc71;--theme-accent-strong:#2ecc71;--theme-accent-secondary:#74efa7;
+  --theme-ink:#0d1b12;--theme-card-light:#cee2d3;--theme-art-one:#173d27;--theme-art-two:#244631;--theme-art-three:#1d382b;
 }
-:root[data-theme="forest"] {
-  color-scheme: dark;
-  --theme-page: #101511;
-  --theme-header: rgba(16,21,17,.94);
-  --theme-surface: #19221b;
-  --theme-surface-raised: #161e18;
-  --theme-light: #dce4d7;
-  --theme-contact: #c4d0b6;
-  --theme-text: #e9eee5;
-  --theme-muted: #a0ad9d;
-  --theme-soft: #b2c0ae;
-  --theme-border: rgba(226,238,222,.16);
-  --theme-border-light: rgba(23,34,25,.2);
-  --theme-accent: #91a982;
-  --theme-accent-strong: #66845f;
-  --theme-accent-secondary: #b0a46e;
-  --theme-ink: #151b15;
-  --theme-card-light: #ced9c4;
-  --theme-art-one: #3a4738;
-  --theme-art-two: #39483a;
-  --theme-art-three: #333f35;
+:root[data-theme="orange"]{
+  --theme-page:#17100a;--theme-header:rgba(23,16,10,.96);--theme-surface:#26180d;--theme-surface-raised:#34200f;
+  --theme-light:#f2e3d1;--theme-contact:#e6c9a8;--theme-text:#fff9f1;--theme-muted:#d9c6b1;--theme-soft:#eedbc6;
+  --theme-border:rgba(255,247,237,.2);--theme-border-light:rgba(45,28,13,.28);
+  --theme-accent:#ff7a00;--theme-accent-strong:#ff7a00;--theme-accent-secondary:#ffab43;
+  --theme-ink:#211408;--theme-card-light:#ead6bd;--theme-art-one:#553015;--theme-art-two:#493316;--theme-art-three:#3a2914;
 }
-:root[data-theme="silver"] {
-  color-scheme: dark;
-  --theme-page: #151617;
-  --theme-header: rgba(21,22,23,.95);
-  --theme-surface: #202224;
-  --theme-surface-raised: #1b1d1f;
-  --theme-light: #e1e2df;
-  --theme-contact: #c7c9c7;
-  --theme-text: #f0f1ef;
-  --theme-muted: #a9acab;
-  --theme-soft: #bec1c1;
-  --theme-border: rgba(239,241,240,.17);
-  --theme-border-light: rgba(29,31,32,.2);
-  --theme-accent: #c2c7c6;
-  --theme-accent-strong: #929b9b;
-  --theme-accent-secondary: #d0d1ca;
-  --theme-ink: #171819;
-  --theme-card-light: #d7d9d6;
-  --theme-art-one: #45423e;
-  --theme-art-two: #414442;
-  --theme-art-three: #393d3d;
+:root[data-theme="gradient"]{
+  --theme-page:#120d0a;--theme-header:rgba(18,13,10,.96);--theme-surface:#211610;--theme-surface-raised:#2d1c11;
+  --theme-light:#f1e4d5;--theme-contact:#dec8a6;--theme-text:#fff9f2;--theme-muted:#d8c7b6;--theme-soft:#ecddcc;
+  --theme-border:rgba(255,249,242,.2);--theme-border-light:rgba(44,27,15,.28);
+  --theme-accent:#ff8a16;--theme-accent-strong:#ed3827;--theme-accent-secondary:#ffca4a;
+  --theme-ink:#1e140b;--theme-card-light:#e5d3bd;
+  --theme-art-one:linear-gradient(135deg,#401512 0%,#a82b17 40%,#e45b16 72%,#ffb62f 100%);
+  --theme-art-two:linear-gradient(135deg,#30200f 0%,#855016 55%,#e1921a 100%);
+  --theme-art-three:linear-gradient(135deg,#2c160c 0%,#9a3b12 48%,#dc7913 100%);
 }
 
-/* Theme controls sit in the navbar on wide screens and stay reachable on mobile. */
-.header-actions{display:flex;align-items:center;gap:clamp(12px,2vw,28px);margin-left:auto}
-.header-actions .header-hello{white-space:nowrap}
-.theme-switcher{display:flex;align-items:center;gap:9px}
-.theme-switcher__label{font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--theme-muted)}
-.theme-swatch{position:relative;width:17px;height:17px;flex:0 0 17px;padding:0;border:1px solid rgba(240,240,240,.42);border-radius:50%;background:var(--swatch-color);cursor:pointer;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
-.theme-swatch:hover{transform:scale(1.12)}
-.theme-swatch.is-active{border:2px solid var(--theme-text);box-shadow:0 0 0 2px var(--theme-accent-strong)}
-.theme-swatch:focus-visible{outline:2px solid var(--theme-accent);outline-offset:4px}
-.theme-swatch__tooltip{position:absolute;z-index:80;left:50%;top:calc(100% + 12px);transform:translate(-50%,-3px);padding:6px 8px;border:1px solid var(--theme-border);background:var(--theme-surface-raised);color:var(--theme-text);font:9px var(--mono);white-space:nowrap;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility .18s}
-.theme-swatch:hover .theme-swatch__tooltip,.theme-swatch:focus-visible .theme-swatch__tooltip{opacity:1;visibility:visible;transform:translate(-50%,0)}
-
-/* Palette application: central variables drive every section and interactive detail. */
-html,body{background-color:var(--theme-page);color:var(--theme-text);transition:background-color .3s ease,color .3s ease}
-.site-header{background-color:var(--theme-header);border-color:var(--theme-border);transition:background-color .3s ease,border-color .3s ease}
-.desktop-nav,.hero-side-note,.hero-index{color:var(--theme-muted)}
-.desktop-nav a:hover,.header-hello:hover{color:var(--theme-accent)}
-.header-hello svg,.wordmark span,.hero-side-note span,.scroll-cue svg,.project-info li svg,.process-number span,.mobile-nav a svg,.contact-details a>svg:first-child,.edu-icon{color:var(--theme-accent-strong)}
-.eyebrow{color:var(--theme-soft)}
-.eyebrow-dot{background-color:var(--theme-accent-strong)}
-.hero{background-color:var(--theme-page);transition:background-color .3s ease}
-.hero h1 em,.contact-section h2 em,.skill-head>span,.process-number,.cert-number{color:var(--theme-accent)}
-.hero-intro{color:var(--theme-muted)}
-.button-light{background-color:var(--theme-accent);color:var(--theme-ink)}
-.button-light:hover{background-color:var(--theme-accent-secondary);color:var(--theme-ink)}
-.button-outline:hover{border-color:var(--theme-accent);color:var(--theme-accent)}
-.hero-orbit,.hero-orbit>span{border-color:var(--theme-border)}
-.orbit-core{color:var(--theme-accent-secondary);background-color:var(--theme-surface);box-shadow:none}
-.orbit-node{background-color:var(--theme-accent-strong)}
-.node-two,.node-three{background-color:var(--theme-accent)}
-.about-section,.journey-section{background-color:var(--theme-light);color:var(--theme-ink);transition:background-color .3s ease,color .3s ease}
-.about-section .eyebrow,.journey-section .eyebrow,.about-copy p,.about-signoff,.timeline-marker,.timeline-top p,.timeline-top time,.timeline-content ul,.education-card p,.education-card time{color:var(--theme-muted)}
-.about-section .section-heading h2 span,.journey-section .section-heading h2 span{color:var(--theme-accent-strong)}
-.about-mark,.education-card{background-color:var(--theme-card-light);color:var(--theme-ink)}
-.about-copy .lead-copy,.timeline-top h3{color:var(--theme-ink)}
-.mark-ring,.mark-ring:before,.mark-ring:after,.about-mark,.timeline-entry{border-color:var(--theme-border-light)}
-.work-section,.process-section{background-color:var(--theme-page);color:var(--theme-text);transition:background-color .3s ease,color .3s ease}
-.arsenal-section,.education-section{background-color:var(--theme-surface);color:var(--theme-text);transition:background-color .3s ease,color .3s ease}
-.skill-grid,.skill-group,.process-track,.process-step,.cert-card{border-color:var(--theme-border)}
-.skill-group:hover,.cert-card:hover{background-color:var(--theme-surface-raised)}
-.skill-head svg,.cert-card>svg{color:var(--theme-muted)}
-.skill-tags span{border-color:var(--theme-border);color:var(--theme-soft)}
-.project-art{background-color:var(--theme-art-one);transition:background-color .3s ease}
-.art-ember{background-color:var(--theme-art-one)}.art-olive{background-color:var(--theme-art-two)}.art-blue{background-color:var(--theme-art-three)}
-.project-info h3 sup{color:var(--theme-accent)}
-.project-summary,.project-info li{color:var(--theme-muted)}
-.project-meta,.contribution-label,.no-link-note{color:var(--theme-muted)}
-.timeline-marker i{border-color:var(--theme-accent-strong);background-color:var(--theme-light)}
-.timeline-content li::marker{color:var(--theme-accent-strong)}
-.cert-card:hover{border-color:var(--theme-accent-strong)}
-.contact-section{background-color:var(--theme-contact);color:var(--theme-ink);transition:background-color .3s ease,color .3s ease}
-.contact-section .eyebrow,.contact-intro,.contact-details a,.resume-link,.site-footer{color:var(--theme-muted)}
-.contact-section h2 em{color:var(--theme-accent-strong)}
-.contact-cta{background-color:var(--theme-ink);color:var(--theme-light)}
-.contact-cta:hover{background-color:var(--theme-surface);color:var(--theme-text)}
-.contact-details,.site-footer{border-color:var(--theme-border-light)}
-.site-footer .wordmark{color:var(--theme-ink)}
-.mobile-nav{background-color:var(--theme-surface);border-color:var(--theme-border)}
-.theme-switcher,.theme-switcher *{transition-property:color,background-color,border-color,box-shadow,transform,opacity;transition-duration:.3s}
-
-@media(max-width:900px){.header-actions{gap:14px}.theme-switcher{gap:7px}.theme-switcher__label{display:none}}
-@media(max-width:680px){.header-actions{margin-left:auto;margin-right:12px}.theme-switcher{gap:7px}.theme-swatch{width:16px;height:16px;flex-basis:16px}.site-header{padding-right:14px}.menu-toggle{flex:0 0 auto}}
-@media(max-width:380px){.theme-switcher{gap:5px}.theme-swatch{width:14px;height:14px;flex-basis:14px}.header-actions{margin-right:7px}}
-@media(prefers-reduced-motion:reduce){html,body,.site-header,.hero,.about-section,.journey-section,.work-section,.process-section,.arsenal-section,.education-section,.contact-section,.theme-swatch,.theme-swatch__tooltip{transition-duration:.01ms!important}}
+/* Maintain readable typography on both the dark field and pale content panels. */
+:root[data-theme="gold"],:root[data-theme="red"],:root[data-theme="green"],:root[data-theme="orange"],:root[data-theme="gradient"]{color-scheme:dark}
+:root[data-theme="gold"] .about-section .eyebrow,:root[data-theme="gold"] .journey-section .eyebrow,
+:root[data-theme="red"] .about-section .eyebrow,:root[data-theme="red"] .journey-section .eyebrow,
+:root[data-theme="green"] .about-section .eyebrow,:root[data-theme="green"] .journey-section .eyebrow,
+:root[data-theme="orange"] .about-section .eyebrow,:root[data-theme="orange"] .journey-section .eyebrow,
+:root[data-theme="gradient"] .about-section .eyebrow,:root[data-theme="gradient"] .journey-section .eyebrow{color:#494239}
+:root[data-theme="gold"] .about-copy p:not(.lead-copy),:root[data-theme="gold"] .about-signoff,:root[data-theme="gold"] .timeline-marker,:root[data-theme="gold"] .timeline-top p,:root[data-theme="gold"] .timeline-top time,:root[data-theme="gold"] .timeline-content ul,:root[data-theme="gold"] .education-card p,:root[data-theme="gold"] .education-card time,
+:root[data-theme="red"] .about-copy p:not(.lead-copy),:root[data-theme="red"] .about-signoff,:root[data-theme="red"] .timeline-marker,:root[data-theme="red"] .timeline-top p,:root[data-theme="red"] .timeline-top time,:root[data-theme="red"] .timeline-content ul,:root[data-theme="red"] .education-card p,:root[data-theme="red"] .education-card time,
+:root[data-theme="green"] .about-copy p:not(.lead-copy),:root[data-theme="green"] .about-signoff,:root[data-theme="green"] .timeline-marker,:root[data-theme="green"] .timeline-top p,:root[data-theme="green"] .timeline-top time,:root[data-theme="green"] .timeline-content ul,:root[data-theme="green"] .education-card p,:root[data-theme="green"] .education-card time,
+:root[data-theme="orange"] .about-copy p:not(.lead-copy),:root[data-theme="orange"] .about-signoff,:root[data-theme="orange"] .timeline-marker,:root[data-theme="orange"] .timeline-top p,:root[data-theme="orange"] .timeline-top time,:root[data-theme="orange"] .timeline-content ul,:root[data-theme="orange"] .education-card p,:root[data-theme="orange"] .education-card time,
+:root[data-theme="gradient"] .about-copy p:not(.lead-copy),:root[data-theme="gradient"] .about-signoff,:root[data-theme="gradient"] .timeline-marker,:root[data-theme="gradient"] .timeline-top p,:root[data-theme="gradient"] .timeline-top time,:root[data-theme="gradient"] .timeline-content ul,:root[data-theme="gradient"] .education-card p,:root[data-theme="gradient"] .education-card time{color:#514b42}
+:root[data-theme="gold"] .contact-section .eyebrow,:root[data-theme="gold"] .contact-intro,:root[data-theme="gold"] .contact-details a,:root[data-theme="gold"] .resume-link,:root[data-theme="gold"] .site-footer,
+:root[data-theme="red"] .contact-section .eyebrow,:root[data-theme="red"] .contact-intro,:root[data-theme="red"] .contact-details a,:root[data-theme="red"] .resume-link,:root[data-theme="red"] .site-footer,
+:root[data-theme="green"] .contact-section .eyebrow,:root[data-theme="green"] .contact-intro,:root[data-theme="green"] .contact-details a,:root[data-theme="green"] .resume-link,:root[data-theme="green"] .site-footer,
+:root[data-theme="orange"] .contact-section .eyebrow,:root[data-theme="orange"] .contact-intro,:root[data-theme="orange"] .contact-details a,:root[data-theme="orange"] .resume-link,:root[data-theme="orange"] .site-footer,
+:root[data-theme="gradient"] .contact-section .eyebrow,:root[data-theme="gradient"] .contact-intro,:root[data-theme="gradient"] .contact-details a,:root[data-theme="gradient"] .resume-link,:root[data-theme="gradient"] .site-footer{color:#40372b}
+.theme-swatch[aria-label="Gradient Tone theme"]{background:linear-gradient(135deg,#FF0000 0%,#ff7a00 52%,#ffcf4a 100%)}
